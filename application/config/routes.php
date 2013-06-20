@@ -38,9 +38,11 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "front/home";
 $route['404_override'] = '';
 
+$route['admin'] = "admin/auth";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
+

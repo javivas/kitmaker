@@ -6,6 +6,11 @@ class Articulos_model extends CI_Model {
         $query = $this->db->query("SELECT * FROM articulos ORDER BY id DESC");
         return $query->result();
     }
+    
+    function get_all_articulos_censurados() {
+        $query = $this->db->query("SELECT * FROM articulos WHERE publica=false ORDER BY id DESC");
+        return $query->result();
+    }
 
     function get_public_articulos() {
         $query = $this->db->query("SELECT * FROM articulos WHERE publica=true ORDER BY id DESC");

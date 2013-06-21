@@ -33,6 +33,21 @@ class Articulos_admin extends CI_Controller {
 
         $this->load->view('includes/admin/theme/template_view', $data);
     }
+    
+    //muestra todos los artículos censurados
+    public function censurados() {
+
+        $result['results'] = $this->articulos_model->get_all_articulos_censurados();
+        
+        $data = array(
+            'titulo' => 'CMS para móbiles',
+            'descripcion' => 'CMS para móbiles en codeigniter',
+            'metadatos' => 'metadatos',
+            'content' => $this->load->view("includes/admin/articulos_admin/articulos_admin_view", $result, true)
+        );
+
+        $this->load->view('includes/admin/theme/template_view', $data);
+    }
     //muestra un artículo y posibilita censura/publicacion
     public function articulo($id = null) {
 
@@ -50,6 +65,9 @@ class Articulos_admin extends CI_Controller {
         );
         $this->load->view('includes/admin/theme/template_view', $data);
     }
+    
+    
+    
     //censura un artículo
     public function censurar($id=null) {
 

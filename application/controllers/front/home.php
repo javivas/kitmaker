@@ -3,8 +3,22 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+/**
+* HOME
+*
+* @uses     CI_Controller
+* @package  Kitmaker
+* @version  1.0
+* @author   javivas
+*
+* Description: Controlador para las peticiones de página de la Home del site.
+*
+*/
 
+
+
+class Home extends CI_Controller {
+    
     public function index() {
         
         $data = array(

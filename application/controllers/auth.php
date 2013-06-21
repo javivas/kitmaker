@@ -99,7 +99,7 @@ class Auth extends CI_Controller {
 				'type' => 'password',
 			);
 
-			$this->_render_page('auth/login', $this->data);
+			$this->_render_page('/auth/login', $this->data);
 		}
 	}
 
@@ -113,7 +113,7 @@ class Auth extends CI_Controller {
 
 		//redirect them to the login page
 		$this->session->set_flashdata('message', $this->ion_auth->messages());
-		redirect('front/home', 'refresh');
+		redirect('/front/home', 'refresh');
 	}
 
 	//change password

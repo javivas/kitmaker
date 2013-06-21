@@ -36,12 +36,12 @@ class Articulos extends CI_Controller {
     }
 
     public function insertar() {
-        $data1 = array('prueba' => '');
+        
         $data = array(
             'titulo' => 'CMS para móbiles',
             'descripcion' => 'CMS para móbiles en codeigniter',
             'metadatos' => 'metadatos',
-            'content' => $this->load->view("includes/front/articulos/insertar_view", $data1, true)
+            'content' => $this->load->view("includes/front/articulos/insertar_view", '', true)
         );
         $this->load->view('includes/front/theme/template_view', $data);
     }
@@ -94,13 +94,18 @@ class Articulos extends CI_Controller {
             $seccion = $this->input->post('seccion', true);
             $publica = $this->input->post('publica', true);
             
-            if($publica[0]==1){
+            //Se elimina la posibilidad por parte del usuario de decidir
+            //si será o no pública. Siempre será pública
+            //y será el administrador quien la censure
+            /*if($publica[0]==1){
                 $pub = true;
                 
             }else{
                 $pub = false;
                
-            }
+            }*/
+            $pub = true;
+            
             
             $insert = $this->articulos_model->insert_articulo($titulo, $seccion, $cuerpo, $pub);
             if ($insert) {

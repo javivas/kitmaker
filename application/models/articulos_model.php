@@ -16,6 +16,7 @@ class Articulos_model extends CI_Model {
         $query = $this->db->query("SELECT * FROM articulos ORDER BY id DESC");
         return $query->result();
     }
+
     //Todos los artículos en la BBDD que con pública a true
     function get_public_articulos() {
         $query = $this->db->query("SELECT * FROM articulos WHERE publica=true ORDER BY id DESC");

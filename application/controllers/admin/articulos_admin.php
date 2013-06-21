@@ -2,14 +2,24 @@
 
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
-
+/**
+* Articulos_admin
+*
+* @uses     CI_Controller
+* @package  Kitmaker
+* @version  1.0
+* @author   javivas
+*
+* Description: Controlador para la gestión de posts/artículos por parte del administrador.
+*
+*/
 class Articulos_admin extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
         $this->load->model(array('articulos_model'));
     }
-
+    //muestra todos los artículos
     public function index() {
 
         $result['results'] = $this->articulos_model->get_All_articulos();
@@ -23,7 +33,7 @@ class Articulos_admin extends CI_Controller {
 
         $this->load->view('includes/admin/theme/template_view', $data);
     }
-
+    //muestra un artículo y posibilita censura/publicacion
     public function articulo($id = null) {
 
         $result['results'] = $this->articulos_model->get_articulo($id);
@@ -40,7 +50,7 @@ class Articulos_admin extends CI_Controller {
         );
         $this->load->view('includes/admin/theme/template_view', $data);
     }
-
+    //censura un artículo
     public function censurar($id=null) {
 
 
@@ -72,7 +82,7 @@ class Articulos_admin extends CI_Controller {
             $this->load->view('includes/admin/theme/template_view', $data);
         }
     }
-    
+    //publica un artículo
     public function publicar($id=null) {
 
 

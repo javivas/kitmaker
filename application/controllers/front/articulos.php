@@ -3,6 +3,18 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
+/**
+* Articulos
+*
+* @uses     CI_Controller
+* @package  Kitmaker
+* @version  1.0
+* @author   javivas
+*
+* Description: Controlador para la gestión pública de artículos.
+*
+*/
+
 class Articulos extends CI_Controller {
 
     public function __construct() {

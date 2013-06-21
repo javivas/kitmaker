@@ -1,4 +1,15 @@
 <?php
+/**
+* FORM
+*
+* @uses     CI_Controller
+* @package  Kitmaker
+* @version  1.0
+* @author   javivas
+*
+* Description: Muestra el formulario de inserción de post/artículos.
+*
+*/
 
 class Form extends CI_Controller {
 

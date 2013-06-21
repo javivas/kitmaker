@@ -1,5 +1,15 @@
 <?php
-
+/**
+* Dashboard
+*
+* @uses     CI_Controller
+* @package  Kitmaker
+* @version  1.0
+* @author   javivas
+*
+* Description: BAKC-END Welcome y Estructura.
+*
+*/
 class Dashboard extends CI_Controller{
     
     public function index(){
